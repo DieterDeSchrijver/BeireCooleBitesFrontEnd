@@ -1,8 +1,12 @@
 let dagen;
 
 function init (){
+    $('#content').hide();
+    $('#loadingDiv').show();
     console.log('init')
     $.get( "https://beire-coole-bites-api.herokuapp.com/api/day/alldays", function( data ){
+        $('#loadingDiv').hide();
+        $('#content').show();
         dagen = data;
         finished()
     })
