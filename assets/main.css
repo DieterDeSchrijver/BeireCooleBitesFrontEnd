@@ -1,4 +1,4 @@
-body{
+body {
 	font-family: 'Ubuntu', sans-serif;
 }
 
@@ -6,7 +6,7 @@ body{
 	text-align: center;
 }
 
-#radio{
+#radio {
 	margin: 20px;
 }
 
@@ -26,6 +26,10 @@ body{
 	justify-content: space-around;
 }
 
+#plaatsenVrijText {
+	padding-top: 10px;
+}
+
 .dag {
 	overflow: hidden;
 	width: 300px;
@@ -43,19 +47,20 @@ body{
 }
 
 
-.menu{
+.menu {
 	padding-left: 25px;
 	padding-right: 25px;
 	height: 80px;
 }
 
-.personen{
+.personen {
 	padding: 10px;
 }
 
-.persoon{
+.persoon {
 	padding: 5px;
 }
+
 .form-style-1 {
 	margin: 10px auto;
 	max-width: 400px;
@@ -77,12 +82,13 @@ body{
 	font-weight: bold;
 }
 
-.form-style-1 input[type="submit"], .form-style-1 input[type="button"] {
+.form-style-1 input[type="submit"],
+.form-style-1 input[type="button"] {
 	border-radius: 6px;
 }
 
-.button{
-	text-align:center;
+.button {
+	text-align: center;
 }
 
 .form-style-1 input[type=text],
@@ -160,38 +166,37 @@ select {
 	color: red;
 }
 
-.form-radio
-{
-     -webkit-appearance: none;
-     -moz-appearance: none;
-     appearance: none;
-     display: inline-block;
-     position: relative;
-     background-color: #f1f1f1;
-     color: #666;
-     top: 10px;
-     height: 20px;
-     width: 20px;
-     border: 0;
-     border-radius: 50px;
-     cursor: pointer;     
-     margin: 15px;
-     outline: none;
+.form-radio {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	display: inline-block;
+	position: relative;
+	background-color: #f1f1f1;
+	color: #666;
+	top: 10px;
+	height: 20px;
+	width: 20px;
+	border: 0;
+	border-radius: 50px;
+	cursor: pointer;
+	margin: 15px;
+	outline: none;
 }
-.form-radio:checked::before
-{
-     position: absolute;
-     font: 13px/1 'Open Sans', sans-serif;
-     left: 7px;
-     top: 3px;
-     content: '\02143';
-     transform: rotate(40deg);
+
+.form-radio:checked::before {
+	position: absolute;
+	font: 13px/1 'Open Sans', sans-serif;
+	left: 7px;
+	top: 3px;
+	content: '\02143';
+	transform: rotate(40deg);
 }
-.form-radio:hover
-{
-     background-color: #f7f7f7;
+
+.form-radio:hover {
+	background-color: #f7f7f7;
 }
-.form-radio:checked
-{
-     background-color: #f1f1f1;
+
+.form-radio:checked {
+	background-color: #f1f1f1;
 }

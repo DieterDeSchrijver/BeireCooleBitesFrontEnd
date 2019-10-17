@@ -33,8 +33,8 @@ function loadMenus() {
     addMenuToDay('vrijdag', menus.menu5);
 }
 
-function check(dag){
-    dag.lastChild.checked = true;   
+function check(dag) {
+    dag.lastChild.checked = true;
 }
 
 function toHtml() {
@@ -47,10 +47,10 @@ function toHtml() {
         let plaatsenVrij = document.createElement('div')
         let plaatsenVrijText = document.createElement('div')
 
-        dag.addEventListener("click", function(){
+        dag.addEventListener("click", function () {
             check(dag);
-        }, false);    
-        
+        }, false);
+
         plaatsenVrijText.id = 'plaatsenVrijText'
         plaatsenVrij.id = 'plaatsenVrij'
         radio.type = 'radio'
@@ -85,8 +85,8 @@ function submit() {
         document.getElementById('nietOk').innerHTML = ''
         if (!emailIsValid(document.getElementById('email').value)) {
             document.getElementById('emailNietOk').innerHTML = 'vul een geldig email in.'
-        }else{
-            
+        } else {
+
             document.getElementById('emailNietOk').innerHTML = ''
             var ele = document.getElementsByName('group1');
             for (i = 0; i < ele.length; i++) {
@@ -94,20 +94,20 @@ function submit() {
                     gekozenDag = ele[i].parentElement.firstChild.innerHTML;
                 }
             }
-    
+
             let name = document.getElementById('voornaam').value + " " + document.getElementById('achternaam').value
-            _ajax_request(`https://beire-coole-bites-api.herokuapp.com/api/day/addPerson?name=${name}&day=${gekozenDag}`,'PUT', function(result) {
+            _ajax_request(`https://beire-coole-bites-api.herokuapp.com/api/day/addPerson?name=${name}&day=${gekozenDag}`, 'PUT', function (result) {
                 if (result === '200 OK') {
                     alert('ingeschreven!');
                 }
             })
 
         }
-        
+
     }
 }
 
-function emailIsValid (email) {
+function emailIsValid(email) {
     return /\S+@\S+\.\S+/.test(email)
 }
 
