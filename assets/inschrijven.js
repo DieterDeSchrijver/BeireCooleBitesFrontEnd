@@ -1,11 +1,11 @@
 let dagen;
 
 let menus = {
-    menu1: 'Gekookte aardappelen, gebakken kalfslapje met bloemkool in béchamelsaus',
-    menu2: 'Tomatensoep, volkoren pasta met gegrilde zalm in roomsaus met prei',
-    menu3: 'Erwtensoep, kalkoenlapje met gekookte aardappelen en rodekool met appel',
-    menu4: 'Wortelsoep, gebakken kipblokjes met spinazie en puree',
-    menu5: 'Pompoensoep, kabeljauw met vissaus, volkoren rijst en gegratineerde courgettes'
+    menu1: 'Erwtensoep<br>     gebakken kalfslapje met bloemkool in béchamelsaus',
+    menu2: 'Tomatensoep<br> volkoren pasta met gegrilde zalm in roomsaus met prei',
+    menu3: 'Erwtensoep<br> kalkoenlapje met gekookte aardappelen en rodekool met appel',
+    menu4: 'Wortelsoep<br> gebakken kipblokjes met spinazie en puree',
+    menu5: 'Pompoensoep<br> kabeljauw met vissaus, volkoren rijst en gegratineerde courgettes'
 }
 
 function init() {
@@ -33,6 +33,10 @@ function loadMenus() {
     addMenuToDay('vrijdag', menus.menu5);
 }
 
+function check(dag){
+    dag.lastChild.checked = true;   
+}
+
 function toHtml() {
     let week = document.getElementById("week")
     dagen.forEach(d => {
@@ -40,19 +44,33 @@ function toHtml() {
         let naam = document.createElement('div');
         let menu = document.createElement('div');
         let radio = document.createElement('input')
+        let plaatsenVrij = document.createElement('div')
+        let plaatsenVrijText = document.createElement('div')
 
+        dag.addEventListener("click", function(){
+            check(dag);
+        }, false);    
+        
+        plaatsenVrijText.id = 'plaatsenVrijText'
+        plaatsenVrij.id = 'plaatsenVrij'
         radio.type = 'radio'
         radio.name = 'group1'
         radio.id = 'radio';
+        radio.setAttribute('class', 'form-radio');
         menu.setAttribute('class', 'menu')
         dag.setAttribute('class', 'dag');
         naam.setAttribute('class', 'dagNaam');
+
+        plaatsenVrijText.innerHTML = 'beschikbare plaatsen: '
+        plaatsenVrij.innerHTML = d.maxCap - d.listPersons.length
 
         menu.innerHTML = d.menu
         naam.innerHTML = d.dayName;
 
         dag.appendChild(naam)
         dag.appendChild(menu)
+        dag.appendChild(plaatsenVrijText)
+        dag.appendChild(plaatsenVrij)
         dag.appendChild(radio)
         week.appendChild(dag)
 

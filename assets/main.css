@@ -1,5 +1,13 @@
+body{
+	font-family: 'Ubuntu', sans-serif;
+}
+
 .title {
 	text-align: center;
+}
+
+#radio{
+	margin: 20px;
 }
 
 .loadingDiv {
@@ -13,19 +21,41 @@
 
 .week {
 	display: flex;
-	justify-content: space-around;
 	padding: 50px;
+	flex-flow: row wrap;
+	justify-content: space-around;
 }
 
 .dag {
+	overflow: hidden;
+	width: 300px;
 	text-align: center;
-	padding: 30px;
+	margin: 10px;
+	background-color: #4691A4;
+	color: white;
+	border-radius: 10px;
 }
 
 .dagNaam {
 	padding: 10px;
+	font-size: 1.3em;
+	font-weight: bold;
 }
 
+
+.menu{
+	padding-left: 25px;
+	padding-right: 25px;
+	height: 80px;
+}
+
+.personen{
+	padding: 10px;
+}
+
+.persoon{
+	padding: 5px;
+}
 .form-style-1 {
 	margin: 10px auto;
 	max-width: 400px;
@@ -45,6 +75,14 @@
 	padding: 0px;
 	display: block;
 	font-weight: bold;
+}
+
+.form-style-1 input[type="submit"], .form-style-1 input[type="button"] {
+	border-radius: 6px;
+}
+
+.button{
+	text-align:center;
 }
 
 .form-style-1 input[type=text],
@@ -120,4 +158,40 @@ select {
 
 .form-style-1 .required {
 	color: red;
+}
+
+.form-radio
+{
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+     display: inline-block;
+     position: relative;
+     background-color: #f1f1f1;
+     color: #666;
+     top: 10px;
+     height: 20px;
+     width: 20px;
+     border: 0;
+     border-radius: 50px;
+     cursor: pointer;     
+     margin: 15px;
+     outline: none;
+}
+.form-radio:checked::before
+{
+     position: absolute;
+     font: 13px/1 'Open Sans', sans-serif;
+     left: 7px;
+     top: 3px;
+     content: '\02143';
+     transform: rotate(40deg);
+}
+.form-radio:hover
+{
+     background-color: #f7f7f7;
+}
+.form-radio:checked
+{
+     background-color: #f1f1f1;
 }

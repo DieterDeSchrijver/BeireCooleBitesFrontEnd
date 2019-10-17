@@ -27,6 +27,7 @@ function finished(){
 
         d.listPersons.forEach(p => {
             let persoon = document.createElement('div');
+            persoon.setAttribute('class', 'persoon')
             persoon.innerHTML = p
             personen.appendChild(persoon)
         });
