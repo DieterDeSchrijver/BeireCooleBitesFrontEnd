@@ -40,6 +40,10 @@ body {
 	border-radius: 10px;
 }
 
+.dag:hover {
+	cursor: pointer;
+}
+
 .dagNaam {
 	padding: 10px;
 	font-size: 1.3em;
@@ -185,12 +189,14 @@ select {
 }
 
 .form-radio:checked::before {
-	position: absolute;
-	font: 13px/1 'Open Sans', sans-serif;
-	left: 7px;
-	top: 3px;
-	content: '\02143';
-	transform: rotate(40deg);
+	content: '';
+    width: 12px;
+    height: 12px;
+    background: #4691A4;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
 }
 
 .form-radio:hover {
@@ -200,3 +206,4 @@ select {
 .form-radio:checked {
 	background-color: #f1f1f1;
 }
+
