@@ -30,9 +30,13 @@ body {
 	padding-top: 10px;
 }
 
+#plaatsenVrij{
+	font-weight: bold;
+}
+
 .dag {
 	overflow: hidden;
-	width: 300px;
+	width: 200px;
 	text-align: center;
 	margin: 10px;
 	background-color: #4691A4;
@@ -54,7 +58,8 @@ body {
 .menu {
 	padding-left: 25px;
 	padding-right: 25px;
-	height: 80px;
+	height: 100px;
+	font-size: 0.9em;
 }
 
 .personen {

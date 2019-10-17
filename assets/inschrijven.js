@@ -62,7 +62,12 @@ function toHtml() {
         naam.setAttribute('class', 'dagNaam');
 
         plaatsenVrijText.innerHTML = 'beschikbare plaatsen: '
-        plaatsenVrij.innerHTML = d.maxCap - d.listPersons.length
+        if (d.maxCap - d.listPersons.length <= 0) {
+            plaatsenVrij.innerHTML = 'VOLZET'
+        }else{
+            plaatsenVrij.innerHTML = d.maxCap - d.listPersons.length
+        }
+        
 
         menu.innerHTML = d.menu
         naam.innerHTML = d.dayName;
@@ -71,7 +76,16 @@ function toHtml() {
         dag.appendChild(menu)
         dag.appendChild(plaatsenVrijText)
         dag.appendChild(plaatsenVrij)
-        dag.appendChild(radio)
+        
+        console.log(d.maxCap)
+
+        if (d.listPersons.length<=d.maxCap) {
+            dag.appendChild(radio)
+            
+        }else{
+            dag.style.opacity = 0.5;
+        }
+
         week.appendChild(dag)
 
     });
